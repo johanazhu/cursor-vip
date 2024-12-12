@@ -1,89 +1,62 @@
 # cursor-vip
 
-> 🌐️ English | [中文](README_CN.md)
 
-`cursor-vip` is a tool service for CURSOR smart code editor to enjoy VIP intelligent prompts without logging in.
+`cursor-vip` 是一个用于 CURSOR 智能代码编辑器 无需账号登录即可享受VIP智能提示的工具服务。
 
 
-### Usage
+### 使用方式
 
-Open the terminal on MacOS/Linux; Open Git Bash on Windows. Then execute the following command to install:
->some computers may report false positives, need to close the antivirus software/computer housekeeper/security protection and then proceed
+在 MacOS/Linux 中，请打开终端；在 Windows 中，请打开 Git Bash。然后执行以下命令来安装：
+> 部分电脑可能会误报毒，需要关闭杀毒软件/电脑管家/安全防护再进行
 
-Method 1: Install via GitHub script
-```bash
-bash <(curl -Lk https://github.com/kingparks/cursor-vip/releases/download/latest/i.sh) githubReadme
-```
-Method 2: Install via ghp.ci proxy script
+方式1：通过 ghp.ci 代理脚本
 ```bash
 bash <(curl -Lk https://ghp.ci/https://github.com/kingparks/cursor-vip/releases/download/latest/install.sh) githubReadme
 ```
-Method 3: Manually download the binary file
-> download the binary file for the corresponding operating system from the [release](https://github.com/kingparks/cursor-vip/releases) page
- ```shell
+方式2：通过 GitHub 脚本
+```bash
+bash <(curl -Lk https://github.com/kingparks/cursor-vip/releases/download/latest/i.sh) githubReadme
+```
+方式3：手动下载二进制文件
+> 从 [release](https://github.com/kingparks/cursor-vip/releases) 页下载对应操作系统的二进制文件
+```shell
 # MaxOS/Linux
 sudo mv cursor-vip_xx_xxx /usr/local/bin/cursor-vip;
 chmod +x /usr/local/bin/cursor-vip;
 cursor-vip githubReadme;
-# Windows 
-# double click cursor-vip_xx_xxx.exe
+# Windows
+# 双击 cursor-vip_xx_xxx.exe
 ```
 
-Launch cursor-vip：
+启动 cursor-vip：
 ```bash
 # MaxOS/Linux
 cursor-vip
 # Windows
-# double click cursor-vip_xx_xxx.exe
+# 双击 cursor-vip_xx_xxx.exe
 ```
 
 <!--
 <details>
-<summary>Precautions for using strong proxy mode</summary>
+  <summary>使用强劲代理模式注意事项</summary>
 
-Strong proxy mode For the first time after starting, you need to install the trusted certificate. The certificate will be automatically generated after the first start command, and the path is `~/.cursor-vip/cursor-vip-ca-cert.pem`.
-* MacOS: Execute `open ~/.cursor-vip` in the terminal, double-click the cursor-vip-ca-cert.pem file, pop up the "Keychain Access" window, select the certificate, search for cursor-vip, double-click cursor-vip, expand trust, select "Always trust when using this certificate", close the pop-up window, enter the password to confirm, and the certificate is installed.
-* Windows: Search for cer in windows, select the `certmgr.msc` function, expand `Trusted Root Certification Authorities`, select `Certificates`, right-click `All Tasks`, select `Import...`, next, enter the `%homepath%\.cursor-vip\cursor-vip-ca-cert.pem` file, next all the way, complete; reopen the browser.
-* Linux: //TODO linux currently only supports minimalist mode
+如果选择强劲代理模式首次启动后需安装信任证书，证书会在首次启动命令后自动生成，路径为 `~/.cursor-vip/cursor-vip-ca-cert.pem`。
+* MacOS: 在终端执行 `open ~/.cursor-vip`，双击 cursor-vip-ca-cert.pem 文件，选择`登录`，弹出“钥匙串访问”窗口，选择证书，搜索 cursor-vip，双击 cursor-vip，展开信任，选择使用此证书时“始终信任”，关闭弹窗，输入密码确认，证书安装完成。
+* Windows: 在windows搜索输入 `管理用户证书`,选择`管理用户证书`功能，展开`受信任的根证书颁发机构`，选中`证书`，右键`所有任务`，选择`导入`，下一步，输入`%homepath%\.cursor-vip\cursor-vip-ca-cert.pem`文件，一直下一步，完成; 重新打开浏览器。
+* Linux: //TODO linux 目前只支持极简模式
 
 </details>
 -->
 
-Enjoy cursor-vip:
-* Open the CURSOR code editor, click the settings icon in the upper right corner, and you can see that you are already a VIP account.
-* Enjoy code prompts and chat functions.
-
+享受 cursor-vip：
+* 打开 CURSOR 代码编辑器，点击右上角设置图标，可看到已是VIP账号。
+* 尽情享受代码提示和聊天功能。
 ---
-### Promotion Guide
-By promoting cursor-vip, you can automatically get up to an unlimited amount of free usage time, and the other party can also get 15 days of free (self-registration for 7 days), you can refer to the following methods:
-1. After cloning this repository, replace `githubReadme` in the `README` with your DeviceID.
-2. Post articles on platforms such as SegmentFault/Stack Overflow/GitHub Discussions/Reddit/Dev.to/Hacker News/DZone/V2EX/Quora/WeChat Official Account/Zhihu/Bilibili/CSDN/, promoting the use of cursor pro in this way, and attach your own promotional installation command or cloned github address.
-3. Comment under cursor related articles or videos, for example: "Cooperate with Github's [Your Github Name]/cursor-vip for low-priced or freelancing Pro"
----
-### Q & A
-
-* I have two computers at home and at work, and the usage time will not overlap. Can I pay for one and extend the usage period of two devices?
-> No, because the cursor official is used to prompt Too many computers used according to the device detection, and the platform currently shares a Pro account for every 8 devices
-
-* Slow request, add requests here...
-* Global Rate Limit Hit - Server is Busy...
-* Unable to reach Anthropic...
-> cursor official normal busy period advanced model queue, change small model can solve, or try to delete the cache:
-> Mac: rm ~/Library/Application\ Support/Cursor
-> Windows: rd -r %UserProfile%\AppData\Roaming\Cursor\Cache
-
-* Using composer prompts: We're currently receiving a large number of slow requests and could not queue yours
-> There is indeed this problem, currently no solution, at this time, use chat
-
-* Prompts: Connection failed. check your internet connection or VPN...
-> The problem of computer network, such as setting a proxy, but the proxy service is not started or abnormal, starting or closing the proxy service can generally solve the problem, and if it still does not work, you can try to restart the computer
-
-* Prompts: Is it possible not to display the window after running?
-> No, you need to keep a window open to maintain a service for cursor use, but you can minimize it
-
-* After promotion, the increase in the number of people promoted is not displayed
-> The person being recommended needs to use the complete promotion command to install, and it only takes effect for the first installation of the device, and virtual machines such as VMware will not increase the number of people
-
+### 推广指南
+通过推广 cursor-vip，您可以自动获得至多无限多的免费使用时间,对方也可以获取15天的免费试用(自主注册为7天), 可参考以下方式：
+1. clone 该仓库后，替换 `README` 中的 `githubReadme` 为您的设备码。
+2. 在公众号/知乎/哔哩哔哩/CSDN/SegmentFault/Stack Overflow/GitHub Discussions/Reddit/Dev.to/Hacker News/DZone/V2EX/Quora 等平台发布文章，安利此种使用 cursor pro 的方式，附加上自己的推广安装命令或 clone 后的 github 地址。
+3. 在相关 cursor 文章或视频下面评论 例如："可以配合 github 的 [你的github名字]/cursor-vip 低价或白嫖 Pro"
 ---
 ### Star History
 <a href="https://star-history.com/#kingparks/cursor-vip&Date">
